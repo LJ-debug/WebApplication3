@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@inject IHttpContextAccessor contxt;
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <br />
+    <h1 class="display-4">Welcome @Model.Iname</h1>
+    <h3>This is your user data</h3>
+    <p>Email: @Model.Iemail</p>
+    <p>NRIC: @Model.DecryptedNRIC</p>
+    <p>Gender: @Model.Igender</p>
+    <p>Date of Birth: @Model.Idob</p>
+    <p>Resume: @Model.IResume</p>
+    <p>Who Am I: @Model.IWhoAmI</p>
+    <br />
+    <p>Session Last Access Time: @contxt.HttpContext.Session.GetString("LastAccessTime")</p>
+
+</div>
